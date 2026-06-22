@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #0b0a0f;
+  --color-ink: #eceaf4;
+  --color-soft: #d6d2e0;
+  --color-muted: #9a94a8;
+  --color-faint: #6b6578;
+  --color-accent: #a855f7;
+  --color-accent2: #c77dff;
+
+  --font-display: 'Syne', sans-serif;
+  --font-sans: 'Instrument Sans', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --animate-shimmer: shimmer 7s linear infinite alternate;
+  --animate-float-y: floatY 6s ease-in-out infinite;
+  --animate-pulse-glow: pulseGlow 8s ease-in-out infinite;
+  --animate-scroll-cue: scrollCue 1.8s ease-in-out infinite;
+  --animate-marquee: marquee 34s linear infinite;
+
+  @keyframes shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+  @keyframes floatY {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+  @keyframes pulseGlow {
+    0%,
+    100% {
+      opacity: 0.45;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+  @keyframes scrollCue {
+    0% {
+      transform: translateY(0);
+      opacity: 0.9;
+    }
+    70% {
+      opacity: 0.15;
+    }
+    100% {
+      transform: translateY(13px);
+      opacity: 0;
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+:root {
+  --accent: #a855f7;
+  --accent2: #c77dff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0b0a0f;
+  color: #eceaf4;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent, #a855f7);
+  color: #0b0a0f;
+}
